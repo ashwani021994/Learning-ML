@@ -1,5 +1,5 @@
 from prefect import task, Flow
-from prefect.storage import GitLab
+from prefect.storage import github
 
 @task
 def get_data():
@@ -13,10 +13,10 @@ with Flow("example") as flow:
     data = get_data()
     print_data(data)
 
-flow.storage = GitLab(
-    repo="all_scripts",                            # name of repo
+flow.storage = Github(
+    repo="Learning-ML",                            # name of repo
     path="/test_code_3.py",
-    access_token_secret="GITHUB_ACCESS_TOKEN"
+
 )
 
 
