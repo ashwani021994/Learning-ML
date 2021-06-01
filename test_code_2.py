@@ -82,7 +82,7 @@ with Flow("my etl flow", state_handlers=[failed_alert]) as f:
 
 f.register(project_name="tutorial1")
 
-flow.storage = GitHub(
+f.storage = GitHub(
     repo="ashwani021994/Learning-ML",  # name of repo
     path="/test_code_2.py"
 
