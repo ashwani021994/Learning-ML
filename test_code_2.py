@@ -73,7 +73,7 @@ def store_complaints(parsed):
 # interval schedule here means flow will run in every 1 min ########
 
 # we have state handler for flow as well so there are two types task state handlers and flow state handlers
-with Flow("my etl flow", state_handlers=[failed_alert],storage=Local()) as f:
+with Flow("my etl flow", state_handlers=[failed_alert]) as f:
     db_table = create_table()
     raw = get_complaint_data()
     parsed = parse_complaint_data(raw)  # functional api (implicitly defining using output of one as input of other)
